@@ -1,0 +1,40 @@
+{% extends "admin-base.html" %} {% block title %} Admin Books {% endblock %} {% block content %}
+
+
+
+<div class="creat_book">
+    <a class="create-button" href="{{ url_for('admin.create_book') }}">Add Book</a>
+</div>
+
+{% for book in books %}
+<div class="container-boxes">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+
+        {% for bookphoto in bookphotos %} 
+        {% if book.book_id == bookphoto.book_id %}
+        <a><img class="picture-area" src="{{ url_for('admin.send_book', filename=bookphoto.path) }}" ></a>
+        
+        {% endif %} 
+        {% endfor %}
+
+        <div class="text-area">
+
+            <td> Book: {{ book.name }} </td>
+            </br>
+            <td> Author: {{ book.author }} </td>
+            </br>
+            <td> Publication Date: {{ book.publication_date}}</td>
+            </br>
+            <td> Rating: {{ book.rating }} </td>
+            </br>
+            <td> Review: {{ book.review }} </td>
+            </br>
+            <td> Count: {{ book.book_count }} </td>
+
+        </div>
+    </form>
+</div>
+
+{% endfor %}
+{% endblock %}

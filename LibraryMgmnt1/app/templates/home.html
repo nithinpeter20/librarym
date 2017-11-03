@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class=header>
+        <div id=heading> Library Management system</div>
+        <div class=tagbar>
+            <div class=register>
+                <input class="tagbutton1" type="button" value='Register' onclick="location.href='/register';">
+            </div>
+            <div class=login>
+                <input class="tagbutton1" type="button" value='Login' onclick="location.href='/login';">
+            </div>
+        </div>
+    </div>
+
+    <div class=flash_msg>
+        {% import "bootstrap/utils.html" as utils %} {{ utils.flashed_messages() }}
+    </div>
+    <div class=footer>
+        footer
+    </div>
+
+</body>
+
+</html>

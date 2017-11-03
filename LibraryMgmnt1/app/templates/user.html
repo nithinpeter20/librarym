@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>User</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class=header>
+        <div id=heading> User-Page</div>
+        <div class=tagbar>
+            <div class=register>
+                <input class="tagbutton1" type="button" value='Register' onclick="location.href='/register';">
+            </div>
+            <div class=login>
+                <input class="tagbutton1" type="button" value='Logout' onclick="location.href='/logout';">
+            </div>
+        </div>
+    </div>
+
+    <div class=footer>
+        footer
+    </div>
+
+</body>
+
+</html>

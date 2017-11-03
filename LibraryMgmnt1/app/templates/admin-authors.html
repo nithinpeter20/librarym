@@ -1,0 +1,32 @@
+{% extends "admin-base.html" %} 
+{% block title %} Admin Authors {% endblock %} 
+
+{% block content %}
+
+<div class="creat_book">
+    <a class="create-button" href="{{ url_for('admin.create_author') }}">Add Author</a>
+</div>
+
+
+
+{% for author in authors %}
+<div class="container-boxes">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+
+        <img class="picture-area" src="{{ url_for('admin.send_author', filename=author.image) }}">
+
+        <div class="text-area">
+            <td>Name: {{ author.author_name }} </td>
+            </br>
+            <td>Birth place: {{ author.place }} </td>
+            </br>
+            <td>Age: {{author.age}}</td>
+        </div>
+
+    </form>
+
+</div>
+
+{% endfor %}
+{% endblock %}
